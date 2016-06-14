@@ -1,1 +1,4 @@
-# 3WEB 
+# 3WEB
+``` 
+    npm install
+    bower install 
