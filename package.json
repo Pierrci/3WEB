@@ -1,0 +1,29 @@
+{
+  "name": "angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "start": "concurrently \"npm run serve\" \"gulp watch\"",
+    "serve": "lite-server",
+    "postinstall": "bower install && typings install && gulp styles && gulp inject",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^2.1.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.1.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-task-listing": "^1.0.1",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.6",
+    "lite-server": "^2.2.0",
+    "main-bower-files": "^2.13.1"
+  }
+}
