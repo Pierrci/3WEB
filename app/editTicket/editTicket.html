@@ -1,0 +1,26 @@
+<h1 class="center">Edit ticket</h1>
+<div>
+    <div class="row ">
+        <div class="col col-md-5 col-md-offset-4 ">
+            <h2>Summary :
+                <input type="text" class="form-control" ng-model="edit.ticketDetail.summary">
+            </h2>
+
+            <h2>Description :
+                <textarea class="form-control" ng-model="edit.ticketDetail.description"></textarea>
+            </h2>
+
+            <h2>
+                Priority :
+                <select class="form-control"  ng-model="edit.ticketDetail.priority">            
+                    <option value="trivial">Trivial</option> <!-- interpolation -->
+                    <option value="minor">Minor</option>
+                    <option value="major">Major</option>
+                    <option value="critical">Critical</option>
+                    <option value="bloker">Blocker</option>
+                </select><br>
+            </h2>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="addT.createTicket()" >Edit ! </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="center">
+
+    <h1 class="center">Ticket Detail
+        <span ng-show="isUserPOwner()">
+         - <a ui-sref="editTicket/{{detail.ticket.id}}" >Edit</a> - <a ng-click="detail.deleteTicket()">Delete</a>
+        </span>
+        <a ng-show="detail.showStart()" ng-click="detail.startWorking()">Start Working</a>
+        <a ng-show="detail.showStop()" ng-click="detail.stopWorking()">Stop Working</a>
+    </h1>
+
+    <div class="row">
+        <div class="center col col-md-offset-2 col-md-8" style="border:1px;border-style:solid">
+            <h2>{{detail.ticketDetail.summary}} <h4>{{detail.ticketDetail.creationDate | date}}</h4></h2>
+            <h3 style="float:right"></h3>
+            <div class="row">
+                <div class="col col-md-3"><b>Reported by : </b></div>
+                <div class="col col-md-3">{{detail.ticketDetail.reporter}}</div>
+                <div class="col col-md-3"><b>Owned by :</b></div>
+                <div class="col col-md-3">{{detail.ticketDetail.developer}}</div>
+            </div>
+            <div class="row">
+                <div class="col col-md-3"><b>Priority :</b></div>
+                <div class="col col-md-3">{{detail.ticketDetail.priority}}</div>
+                <div class="col col-md-3"><b>Status :</b></div>
+                <div class="col col-md-3">{{detail.ticketDetail.status}}</div>
+            </div>
+            <div>
+                <h2>Description</h2>
+                <p>{{detail.ticketDetail.description}}</p>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <h2>Comments</h2>
+    <div class="row ">
+
+        <div class="center col col-md-offset-2 col-md-8" style="border:1px;border-style:solid;border-bottom:0px">
+
+            <div ng-repeat="item in detail.comments">
+                
+                <div class="col col-md-6 ">
+                    <label><b>From : </b>{{item.author.name}}</label>
+                </div>
+                <div class="col-md-6 col-offset-md-50">
+                    <label><b>Posted the : </b>{{item.creationDate|date}}</label>
+                </div>
+                <div class="col" style="text-align:left">
+                    {{item.content}}
+                </div>
+                <div style="border:1px;border-style:dashed"></div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <h2>Add a comment</h2>
+    <div class="row">
+        <textarea class=" center col-md-8 col col-md-offset-2  content-form" ng-model="detail.newComment"></textarea>
+
+    </div>
+    <button class="btn btn-lg btn-primary " ng-click="detail.createComment()" type="submit">Submit ! </button>
+
+</div>
+</div>

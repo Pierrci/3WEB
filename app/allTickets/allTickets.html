@@ -1,0 +1,24 @@
+<div>
+    <div class="container">
+        <h1 class="center">All Tickets</h1>
+        <table class="table" ng-hide="allT.isListEmpty()">
+            <thead>
+                <tr>
+                    <th>Summary</th>
+                    <th>Priority</th>
+                    <th>Reported by</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="item in allT.allTickets">
+                <th>{{item.summary}}</th>
+                <th>{{item.priority}}</th>
+                <th>{{item.reporter.user.firstName}} {{item.reporter.user.lastName}}</th>
+                <th>{{item.status}}</th>
+                <th><a ui-sref="detail({id:item._id})">Show</a></th>
+            </tbody>            
+        </table>
+        <h2 class="center" ng-show="allT.isListEmpty()">You don't have any ticket !</h2>
+    </div>
+</div>

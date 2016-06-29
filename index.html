@@ -1,22 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Angular !</title>
-  
+  <title>SupTrac</title>
+
   <!-- bower:css -->
-  <!-- endbower -->
-  
-  <!-- inject:css -->
+  <link rel="stylesheet" href="bower_components/v-accordion/dist/v-accordion.css">
   <!-- endinject -->
+
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="/css/style.css">
+
 </head>
-<body>
-  
+
+<body ng-app="myApp">
+
+  <div ng-controller="LoginController as login">
+    <nav ng-show="login.isConnected()" class="navbar navbar-inverse menubaritem" role="navigation">
+      <span class="menubar"></span>
+      <span class="title-nav">SupTrac</span>
+      <a class="menubaritem red" ui-sref="login" ng-click="login.disconnect()">Disconnect</a>
+      <a class="menubaritem" ui-sref="allTickets">All Tickets</a>      
+      <a class="menubaritem" ui-sref="newTickets">New Tickets</a>      
+      <a class="menubaritem" ui-sref="myTickets">My Tickets</a>
+      <a class="menubaritem"  ui-sref="addTicket">Add a ticket</a>
+      <a class="menubaritem" ui-sref="readMe">Read Me</a>
+    </nav>
+
+    <nav ng-hide="login.isConnected()" class="navbar navbar-inverse menubaritem" role="navigation">
+      <span class="menubar"></span>
+      <!--<a class="menubaritem" ui-sref="login">Disconnect</a>
+      <a class="menubaritem" ui-sref="account">Account</a>-->
+      <span ui-sref="login" class="title-nav">SupTrac</span>
+      <a class="menubaritem" ui-sref="login">Login</a>
+      <a class="menubaritem" ui-sref="readMe">Read Me</a>
+    </nav>
+  </div>
+
+  <div ui-view></div>
+
   <!-- bower:js -->
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/pdfjs-dist/build/pdf.js"></script>
+  <script src="bower_components/pdfjs-dist/build/pdf.worker.js"></script>
+  <script src="bower_components/pdfmake/build/pdfmake.js"></script>
+  <script src="bower_components/pdfmake/build/vfs_fonts.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/v-accordion/dist/v-accordion.js"></script>
+  <script src="bower_components/angular-pdf/dist/angular-pdf.js"></script>
   <!-- endinject -->
-  
+
   <!-- inject:js -->
+  <script src="app/app.module.js"></script>
+  <script src="app/about/about.controller.js"></script>
+  <script src="app/addTicket/addTicket.controller.js"></script>
+  <script src="app/allTickets/allTickets.controller.js"></script>
+  <script src="app/detail/detail.controller.js"></script>
+  <script src="app/home/home.controller.js"></script>
+  <script src="app/editTicket/editTicket.controller.js"></script>
+  <script src="app/login/login.controller.js"></script>
+  <script src="app/myTickets/myTickets.controller.js"></script>
+  <script src="app/newTickets/newTickets.controller.js"></script>
+  <script src="app/readMe/readMe.controller.js"></script>
   <!-- endinject -->
 </body>
+
 </html>

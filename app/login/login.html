@@ -1,0 +1,19 @@
+<div class="row ">
+    <div class="col-md-6 col-md-offset-3">
+        <h1 class="center">Welcome to SupTrac !</h1>
+          <form class="form-signin" ng-submit="login.submit()">
+        <h3 class="center form-signin-heading">Please sign in</h3>
+        <input type="text"  class="form-control" placeholder="Login" ng-model="login.signin.email" required autofocus><br>
+        <input type="password" class="form-control" placeholder="Password" ng-model="login.signin.password" required><br>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"  ng-model="login.signin.rememberMe"> Remember me
+          </label>
+          
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" >Submit ! </button>
+      </form>
+    </div>
+    
+     
+</div>

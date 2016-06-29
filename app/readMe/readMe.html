@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col col-md-5 col-md-offset-1">
+        <h1>First use in the app ?</h1>
+        <h2>1 You have to create roles</h2>
+        <button class="btn btn-lg btn-primary btn-block" ng-click="readme.createRoles()">Create roles</button>
+        <h2>2 Then you have to create users</h2>
+        <button class="btn btn-lg btn-primary btn-block" ng-click="readme.createUsers()">Create users</button>
+        <h2>3 Go to /login </h2>
+         <button ui-sref="login" class="btn btn-lg btn-primary btn-block" >Go !</button>
+    </div>
+    <div class="col col-md-5 col-md-offset-1" ng-show="readme.showUsers">
+        <h1>Users list</h2>
+        <h2 ng-repeat="item in readme.users">
+             <b>Username :</b> {{item.user.username}}<br>
+             <b>Password :</b> {{item.user.password}}<br>
+             <b>Role :</b> {{item.user.role.name}}<br><br>
+        </h2>
+
+    </div>
+</div>
