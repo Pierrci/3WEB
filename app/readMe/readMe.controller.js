@@ -21,8 +21,12 @@
         ////////////////
 
         function activate() {        
-            vm.users = JSON.parse(window.localStorage.getItem('usersdemo'));
-            if(vm.users!=[]){
+          var storageUsers = JSON.parse(window.localStorage.getItem('usersdemo'));
+            if (storageUsers) {
+                vm.users = storageUsers;
+            }
+          
+            if(vm.users.length){
                 vm.showUsers = true;
             }
         }
